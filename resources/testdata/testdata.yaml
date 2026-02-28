@@ -1,0 +1,20 @@
+email_password:
+      email_register:       frequence119.p@doppiotech.com
+      password_register:     Kong1234*
+
+profile:
+      name:        Khongkhunanat
+      surname:     Phitacknaralert
+      address:     R.Bangbon
+      telephone:    0960345643
+
+
+credit_card:
+      card_number:   4111 1111 1111 1111
+      EXP:    14/2025
+      CVC:    234
+      CardOwner:        kongkunanat
+
+
+search_product:
+      type:        phone
