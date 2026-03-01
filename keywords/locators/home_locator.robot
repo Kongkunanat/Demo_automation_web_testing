@@ -1,7 +1,7 @@
 *** Variables ***
-#Icon for login or register
-${home_locator.user_icon}        xpath=//ul[@role='menu']//span[@aria-label="user"]
-
+${home_locator.icn_cart}        xpath=//a[@class="shopping_cart_link"]
+${home_locator.icn_menu}        xpath=//button[@id="react-burger-menu-btn"]
+${home_locator.ddl_filter}        xpath=//select[@class="product_sort_container"]
 
 #Input search bar
 ${home_locator.input_text}           xpath=//input[@placeholder='input search text']
@@ -13,4 +13,4 @@ ${home_locator.select_product}            xpath=//div[@class="ant-col ant-col-md
 
 
 #button signup
-${home_locator.button_signup}            xpath=//button[@class="css-eq3tly ant-btn ant-btn-default button-login"]
+${home_locator.button_signup}            xpath=//input[@id='login-button']

@@ -2,4 +2,4 @@
 
 #Button Ok
 ${common_locator.button_ok}        xpath=//span[text()='OK']
-
+${common_locator.lbl_header}    xpath=//div[@class="login_logo"] | //div[@class="header_label"]
