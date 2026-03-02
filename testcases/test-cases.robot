@@ -9,7 +9,11 @@ Test Teardown       common.Close all browser
 TC-001 Verify user can buy product successfully
     login_feature.Verify deatails of login page is displayed
     login_feature.Input username and password then tap login button    username=${account.username}   password=${account.password}   
-
+    home_feature.Verify deatails of home page is displayed
+    Tap menu icon
+    Verify close submenu button is displayed
+    Verify all submenu of menu is displayed   list_sub_menu=${sub_menu}
+    Tap close submenu
 
     # register_feature.Sign up    ${email_password.email_register}        ${email_password.password_register}        ${email_password.password_register}
     # home_feature.Select Product       ${search_product.type}   

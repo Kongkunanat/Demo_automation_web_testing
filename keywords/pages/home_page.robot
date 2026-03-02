@@ -14,10 +14,30 @@ Verify filter dropdown is displayed
 
 Verify title of home page is displayed correctly
     [Arguments]    ${expected_text}
-    seleniumlibrary.Wait Until Page Contains Element  ${common_locator.lbl_header}      ${GLOBAL_TIMOUT}
-    ${actual_text}    seleniumlibrary.Get Text     ${common_locator.lbl_header}
+    seleniumlibrary.Wait Until Element Is Visible  ${home_locator.lbl_title_header}      ${GLOBAL_TIMOUT}
+    ${actual_text}    seleniumlibrary.Get Text     ${home_locator.lbl_title_header}
     Should Be Equal As Strings     ${actual_text}     ${expected_text}
 
+Verify not empty list of product is displayed
+    seleniumlibrary.Wait Until Element Is Visible  ${home_locator.list_of_product}      ${GLOBAL_TIMOUT}
+    ${count}    seleniumlibrary.Get Element Count     ${home_locator.list_of_product}
+    Should Be True	${count} > 0     msg=Expected at least one product, but found ${count}
+
+Verify all submenu of menu is displayed
+    [Arguments]    ${list_sub_menu}
+    FOR    ${item}    IN    @{list_sub_menu}
+        ${locator}    string.Replace string    string=${home_locator.lbl_sub_menu_name}    search_for=***lbl_sub_menu***    replace_with=${item}
+        seleniumlibrary.Wait Until Page Contains Element  ${locator}     ${GLOBAL_TIMOUT}
+    END
+
+Verify close submenu button is displayed
+    seleniumlibrary.Wait Until Element Is Visible    ${home_locator.icn_close_sub_menu}    ${GLOBAL_TIMOUT}
+
+Tap close submenu
+    seleniumlibrary.Click Element    ${home_locator.icn_close_sub_menu}
+
+Tap menu icon
+    seleniumlibrary.Click Element    ${home_locator.icn_menu}
 # Click Icon User
 #     SeleniumLibrary.Wait Until Page Contains Element  ${home_locator.user_icon}      ${GLOBAL_TIMOUT}
 #     SeleniumLibrary.Click Element    ${home_locator.user_icon} 

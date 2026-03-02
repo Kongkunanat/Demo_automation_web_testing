@@ -3,8 +3,7 @@ Resource    ./import.robot
 
 *** Keywords ***
 Open swag labs browser
-    seleniumlibrary.Open Browser    ${url}      gc
-
+    seleniumlibrary.Open Browser    ${url}      edge
 
 Close all browser
     seleniumlibrary.Close All Browsers

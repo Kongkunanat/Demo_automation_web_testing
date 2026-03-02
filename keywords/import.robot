@@ -1,7 +1,9 @@
 *** Settings ***
 Library     String
 Library     SeleniumLibrary
+Library    OperatingSystem
 
+Variables    ../resources/helper_key/home_page.yaml
 Variables    ../resources/testdata/testdata.yaml
 Variables    ../resources/setting/${env}/setting.yaml
 Variables    ../resources/setting/configGlobal.yaml
