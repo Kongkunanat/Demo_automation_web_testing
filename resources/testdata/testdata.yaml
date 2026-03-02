@@ -1,20 +1,6 @@
 account:
       username:    standard_user
       password:    secret_sauce
-
-# profile:
-#       name:    Khongkhunanat
-#       surname:    Phitacknaralert
-#       address:    R.Bangbon
-#       telephone:    0960345643
-
-
-# credit_card:
-#       card_number:   4111 1111 1111 1111
-#       EXP:    14/2025
-#       CVC:    234
-#       CardOwner:        kongkunanat
-
-
-# search_product:
-#       type:        phone
+      first_name:    aa
+      last_name:    bb
+      zip_code:    10320

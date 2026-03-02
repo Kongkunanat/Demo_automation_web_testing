@@ -30,15 +30,6 @@ Verify all submenu of menu is displayed
         seleniumlibrary.Wait Until Page Contains Element  ${locator}     ${GLOBAL_TIMOUT}
     END
 
-Verify close submenu button is displayed
-    seleniumlibrary.Wait Until Element Is Visible    ${home_locator.icn_close_sub_menu}    ${GLOBAL_TIMOUT}
-
-Tap close submenu
-    seleniumlibrary.Click Element    ${home_locator.icn_close_sub_menu}
-
-Tap menu icon
-    seleniumlibrary.Click Element    ${home_locator.icn_menu}
-
 Verify all filter menu is displayed
     [Arguments]    ${filter_menu}
     FOR    ${item}    IN    @{filter_menu}
@@ -46,28 +37,54 @@ Verify all filter menu is displayed
         seleniumlibrary.Wait Until Page Contains Element  ${locator}     ${GLOBAL_TIMOUT}
     END
 
+Verify all product is displayed
+    [Arguments]    ${products}
+    FOR    ${item}    IN    @{products}
+        ${locator}    string.Replace string    string=${home_locator.lbl_product_name}    search_for=***lbl_product_name***    replace_with=${item}
+        Scroll until element visible    locator=${locator}
+    END
+
+Verify close submenu button is displayed
+    seleniumlibrary.Wait Until Element Is Visible    ${home_locator.icn_close_sub_menu}    ${GLOBAL_TIMOUT}
+
+Verify footer of home page is displayed
+    seleniumlibrary.Wait Until Element Is Visible    ${home_locator.lbl_footer_page}    ${GLOBAL_TIMOUT}
+
+Verify count of product in cart is displayed correctly
+    [Arguments]    ${count_of_products}
+    ${locator}    string.Replace string    string=${home_page.btn_count_of_products}    search_for=***count_of_products***    replace_with=${count_of_products}
+    seleniumlibrary.Wait Until Element Is Visible    ${locator}
+
+Verify remove button is displayed by product name
+    [Arguments]    ${product_name}
+    ${locator}    string.Replace string    string=${home_page.btn_remove_product}    search_for=***product_name***    replace_with=${product_name}
+    seleniumlibrary.Wait Until Element Is Visible    ${locator}
+
+Get product price
+    [Arguments]    ${product_name}
+    ${locator}    string.Replace string    string=${home_page.lbl_price_of_products}    search_for=***product_name***    replace_with=${product_name}
+    seleniumlibrary.Wait Until Element Is Visible    ${locator}
+    ${locator}    Set Variable    ${locator}
+    ${price}    Get Text    ${locator}
+    ${price}    Replace String    ${price}    $    ${EMPTY}
+    RETURN    ${price}
+
+Tap add product to cart by product name
+    [Arguments]    ${product_name}
+    ${locator}    string.Replace string    string=${home_page.btn_add_product}    search_for=***product_name***    replace_with=${product_name}
+    seleniumlibrary.Click Element    ${locator}
+    ${count_product}    builtin.Evaluate    ${count_products} + 1
+    ${count_product}    builtin.Convert to string    ${count_product}
+    builtin.Set suite variable    ${count_products}  ${count_product}
+
+Tap close submenu
+    seleniumlibrary.Click Element    ${home_locator.icn_close_sub_menu}
+
+Tap menu icon
+    seleniumlibrary.Click Element    ${home_locator.icn_menu}
+
 Tap filter menu dropdown
     seleniumlibrary.Click Element    ${home_locator.ddl_filter_menu}
 
-# Click Icon User
-#     SeleniumLibrary.Wait Until Page Contains Element  ${home_locator.user_icon}      ${GLOBAL_TIMOUT}
-#     SeleniumLibrary.Click Element    ${home_locator.user_icon} 
-
-# Input Keyword For Search
-#     [Arguments]    ${type_product}   
-#     SeleniumLibrary.Wait Until Element Is Visible      ${home_locator.input_text}  ${GLOBAL_TIMOUT}
-#     SeleniumLibrary.Input Text    ${home_locator.input_text}     ${type_product} 
-
-# Click Search Button 
-#     SeleniumLibrary.Wait Until Page Contains Element  ${home_locator.element_search}    ${GLOBAL_TIMOUT}
-#     SeleniumLibrary.Click Element    ${home_locator.element_search}
-
-# Select Product 
-#     SeleniumLibrary.Wait Until Page Contains Element    ${home_locator.select_product}     ${GLOBAL_TIMOUT}
-#     ${elements}=    Get Webelements    ${home_locator.select_product} 
-#     ${first_element}=    Set Variable  ${elements}[0]
-#     SeleniumLibrary.Click Element    ${first_element}
-
-# Click Button Sign Up
-#     SeleniumLibrary.Wait Until Element Is Enabled  ${home_locator.button_signup}    ${GLOBAL_TIMOUT}
-#     SeleniumLibrary.Click Button     ${home_locator.button_signup}  
+Tap cart icon
+    seleniumlibrary.Click Element    ${home_locator.icn_cart}

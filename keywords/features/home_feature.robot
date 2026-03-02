@@ -9,3 +9,14 @@ Verify deatails of home page is displayed
     home_page.Verify filter dropdown is displayed
     home_page.Verify title of home page is displayed correctly    expected_text=Products
     home_page.Verify not empty list of product is displayed
+
+Add product to cart by product name
+    [Arguments]    ${product_name}
+    home_page.Tap add product to cart by product name    product_name=${product_name}
+    home_page.Verify remove button is displayed by product name    product_name=${product_name}
+    ${price}    home_page.Get product price    product_name=${product_name}
+    home_page.Verify count of product in cart is displayed correctly    count_of_products=${count_products}
+    ${cart_product}    Create Dictionary
+    ...    name=${product_name}
+    ...    price=${price}
+    collections.Append to list    ${cart_products}    ${cart_product}
