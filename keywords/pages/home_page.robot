@@ -38,6 +38,17 @@ Tap close submenu
 
 Tap menu icon
     seleniumlibrary.Click Element    ${home_locator.icn_menu}
+
+Verify all filter menu is displayed
+    [Arguments]    ${filter_menu}
+    FOR    ${item}    IN    @{filter_menu}
+        ${locator}    string.Replace string    string=${home_locator.lbl_filter_menu_name}    search_for=***lbl_filter_menu_name***    replace_with=${item}
+        seleniumlibrary.Wait Until Page Contains Element  ${locator}     ${GLOBAL_TIMOUT}
+    END
+
+Tap filter menu dropdown
+    seleniumlibrary.Click Element    ${home_locator.ddl_filter_menu}
+
 # Click Icon User
 #     SeleniumLibrary.Wait Until Page Contains Element  ${home_locator.user_icon}      ${GLOBAL_TIMOUT}
 #     SeleniumLibrary.Click Element    ${home_locator.user_icon} 

@@ -14,6 +14,9 @@ TC-001 Verify user can buy product successfully
     Verify close submenu button is displayed
     Verify all submenu of menu is displayed   list_sub_menu=${sub_menu}
     Tap close submenu
+    Tap filter menu dropdown
+    Verify all filter menu is displayed   filter_menu=${filter_menu}
+    Scroll until element visible    locator=${home_locator.lbl_footer_page}
 
     # register_feature.Sign up    ${email_password.email_register}        ${email_password.password_register}        ${email_password.password_register}
     # home_feature.Select Product       ${search_product.type}   
