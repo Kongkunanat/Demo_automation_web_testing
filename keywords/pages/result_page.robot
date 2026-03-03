@@ -32,6 +32,9 @@ Verify detail of product is displayed correctly
 Verify total price is displayed correctly
     [Arguments]    ${cart_products}
     ${total}    builtin.Evaluate    sum(float(item['price']) for item in $cart_products)
+    #total = 0
+    #for item in cart_products:
+    #   total += float(item['price'])
     ${total}    builtin.Convert to string    ${total}
     ${locator}    string.Replace string    string=${result_locator.lbl_product_price}    search_for=***price***    replace_with=${total}
     seleniumlibrary.Wait Until Element Is Visible    ${locator}    ${GLOBAL_TIMOUT}
