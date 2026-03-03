@@ -1,21 +1,27 @@
+home_page:
+  lbl_header: "Swag Labs"
+  lbl_products: "Products"
+  btn_remove: "Remove"
+  btn_add_to_cart: "Add to cart"
+
 sub_menu:
-  - All Items
-  - About
-  - Logout
-  - Reset App State
+  - "All Items"
+  - "About"
+  - "Logout"
+  - "Reset App State"
 
 filter_menu:
-  - Name (A to Z)
-  - Name (Z to A)
-  - Price (low to high)
-  - Price (high to low)
+  - "Name (A to Z)"
+  - "Name (Z to A)"
+  - "Price (low to high)"
+  - "Price (high to low)"
 
 lbl_footer_page: " Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
 
 products:
-  - Sauce Labs Backpack
-  - Sauce Labs Bike Light
-  - Sauce Labs Bolt T-Shirt
-  - Sauce Labs Fleece Jacket
-  - Sauce Labs Onesie
-  - Test.allTheThings() T-Shirt (Red)
+  - "Sauce Labs Backpack"
+  - "Sauce Labs Bike Light"
+  - "Sauce Labs Bolt T-Shirt"
+  - "Sauce Labs Fleece Jacket"
+  - "Sauce Labs Onesie"
+  - "Test.allTheThings() T-Shirt (Red)"

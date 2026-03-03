@@ -1,0 +1,12 @@
+result_page:
+  lbl_header: "Checkout: Overview"
+  lbl_quantity: "QTY"
+  lbl_description: "Description"
+  btn_cancel: "Cancel"
+  btn_finish: "Finish"
+  lbl_shipping_info:
+    lbl_header: "Shipping Information:"
+    lbl_description: "Free Pony Express Delivery!"
+  lbl_price:
+    lbl_header: "Price Total"
+    lbl_item_total: "Item total: $"

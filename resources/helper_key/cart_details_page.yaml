@@ -1,5 +1,6 @@
-label_page:
-  lbl_cart: Your Cart
-  lbl_quantity: QTY
-  lbl_description: Description
-  btn_remove: Remove
+card_details_page:
+  lbl_cart: "Your Cart"
+  lbl_quantity: "QTY"
+  lbl_description: "Description"
+  btn_remove: "Remove"
+  btn_add_to_cart: "Add to cart"

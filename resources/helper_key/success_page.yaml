@@ -1,0 +1,6 @@
+success_page:
+  lbl_header: "Checkout: Complete!"
+  lbl_information:
+    lbl_header: "Thank you for your order!"
+    lbl_description: "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+  btn_back_home: "Back Home"

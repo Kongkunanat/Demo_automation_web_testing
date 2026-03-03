@@ -19,14 +19,13 @@ Verify label header of top page is displayed by expected text
     Should Be Equal As Strings     ${actual_text}     ${expected_text}
 
 Scroll until element visible
-    [Arguments]    ${locator}    ${max_scroll}=10
+    [Arguments]    ${locator}    ${max_scroll}=4
     FOR    ${index}    IN RANGE    ${max_scroll}
         ${found}=    Run Keyword And Return Status
-        ...    Element Should Be Visible    ${locator}
+        ...    seleniumlibrary.Wait Until Element Is Visible    ${locator}      ${GLOBAL_TIMOUT}
         IF    ${found}
             Exit For Loop
         END
         Execute Javascript    window.scrollBy(0, 200)
         Sleep    0.3s
     END
-    Element Should Be Visible    ${locator}

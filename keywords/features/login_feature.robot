@@ -3,7 +3,7 @@ Resource    ../import.robot
 
 
 *** Keywords ***
-Verify deatails of login page is displayed
+Verify details of login page is displayed
     common.Verify label header of top page is displayed by expected text    expected_text=Swag Labs
     login_page.Verify input username text box is displayed
     login_page.Verify input password text box is displayed

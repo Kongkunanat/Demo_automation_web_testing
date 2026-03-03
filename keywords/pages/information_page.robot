@@ -10,13 +10,13 @@ Verify cancel button is displayed
     seleniumlibrary.Wait Until Element Is Visible    ${information_locator.btn_cancel}    ${GLOBAL_TIMOUT}
 
 Verify title header is displayed
-    seleniumlibrary.Wait Until Element Is Visible  ${information_locator.lbl_header}      ${GLOBAL_TIMOUT}
+    seleniumlibrary.Wait Until Element Is Visible    ${information_locator.lbl_header}      ${GLOBAL_TIMOUT}
 
 Verify input first name text box is displayed
-    seleniumlibrary.Wait Until Element Is Visible  ${information_locator.txt_first_name}      ${GLOBAL_TIMOUT}
+    seleniumlibrary.Wait Until Element Is Visible    ${information_locator.txt_first_name}      ${GLOBAL_TIMOUT}
 
 Verify input last name text box is displayed
-    seleniumlibrary.Wait Until Element Is Visible  ${information_locator.txt_last_name}      ${GLOBAL_TIMOUT}
+    seleniumlibrary.Wait Until Element Is Visible    ${information_locator.txt_last_name}      ${GLOBAL_TIMOUT}
 
 Verify input zip code text box is displayed
     seleniumlibrary.Wait Until Element Is Visible  ${information_locator.txt_zip_code}      ${GLOBAL_TIMOUT}
