@@ -32,7 +32,6 @@ Verify detail of product is displayed correctly
 Verify total price is displayed correctly
     [Arguments]    ${cart_products}
     ${total}    builtin.Evaluate    sum(float(item['price']) for item in $cart_products)
-    #total = 0
     #for item in cart_products:
     #   total += float(item['price'])
     ${total}    builtin.Convert to string    ${total}
